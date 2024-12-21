@@ -1,0 +1,100 @@
+{% comment %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sina BDM</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  </head>
+<body>
+<div class="wrapper">
+  <div class="login_box">
+    <div class="login-header">
+      <span>Login</span>
+    </div>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="input_box">
+        <input type="text" name="email" id="user" class="input-field" required>
+        <label for="user" class="label">Email</label>
+        <i class="bx bx-envelope icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="password" name="password" id="pass" class="input-field" required>
+        <label for="pass" class="label">Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="submit" class="input-submit" value="Login">
+      </div>
+    </form>
+    <div class="register">
+      <span>Don't have an account? <a href="{% url 'register' %}">Register</a></span>
+      <br>
+      <span><a href="{% url 'reset_password' %}">Forget Password?</a></span>
+      <div class="msg">
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}  
+  </div>
+    </div>
+  </div>
+</div>
+</body>
+</html> {% endcomment %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sina BDM</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <style>
+    .error-border {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="login_box">
+    <div class="login-header">
+      <span>Login</span>
+    </div>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="input_box">
+        <input type="text" name="email" id="user" class="input-field {% if email_error %}error-border{% endif %}" value="{{ request.POST.email }}" required>
+        <label for="user" class="label">Email</label>
+        <i class="bx bx-envelope icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="password" name="password" id="pass" class="input-field {% if password_error %}error-border{% endif %}" required>
+        <label for="pass" class="label">Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="submit" class="input-submit" value="Login">
+      </div>
+    </form>
+    <div class="register">
+      <span>Don't have an account? <a href="{% url 'register' %}">Register</a></span>
+      <br>
+      <span><a href="{% url 'reset_password' %}">Forget Password?</a></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

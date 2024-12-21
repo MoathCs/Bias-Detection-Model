@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    {% comment %} <link rel="shortcut icon" href="{% static 'C:\Users\hp\Desktop\IMG_web.png' %}" type="image/x-icon"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <div class="user">Hello, {{ request.user.first_name }}</div>
+            <h1>SINA BDM</h1>
+            <div>
+                <a href="{% url 'logout' %}" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+                </div>
+    </div>
+    
+    <div class="sidebar">
+        <a href="{% url 'main-page' %}" class="logout"><i class="fas fa-home"></i> Home</a>
+    </div>
+
+
+
+
+        <div class="titleSession">
+        <h1>Your Previous Sessions</h1>
+        </div>
+
+        <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Model Name</th>
+                    <th>Result</th>
+                    <th>Rights</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in previous_sessions %}
+                    <tr>
+                        <td>{{ session.date }}</td>
+                        <td>{{ session.model_name }}</td>
+                        <td>{{ session.summary }}</td>
+                        <td>{{ session.right_selected }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            
+    </div>
+</body>
+</html>

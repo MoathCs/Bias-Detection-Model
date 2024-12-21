@@ -1,0 +1,340 @@
+{
+    "added_tokens_decoder": {
+      "124": {
+        "content": "+ا",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "125": {
+        "content": "+ة",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "126": {
+        "content": "+ت",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "127": {
+        "content": "+ك",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "128": {
+        "content": "+ن",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "129": {
+        "content": "+ه",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "130": {
+        "content": "+ي",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "448": {
+        "content": "ب+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "635": {
+        "content": "س+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "765": {
+        "content": "ف+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "802": {
+        "content": "ك+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "816": {
+        "content": "ل+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "897": {
+        "content": "و+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1012": {
+        "content": "+ات",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1013": {
+        "content": "+ان",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1015": {
+        "content": "+كم",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1016": {
+        "content": "+كن",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1017": {
+        "content": "+نا",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1018": {
+        "content": "+ها",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1019": {
+        "content": "+هم",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1020": {
+        "content": "+هن",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1021": {
+        "content": "+وا",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1022": {
+        "content": "+ون",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "1023": {
+        "content": "+ين",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "3000": {
+        "content": "ال+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "6154": {
+        "content": "لل+",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "8270": {
+        "content": "+كما",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "8271": {
+        "content": "+هما",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "29756": {
+        "content": "[CLS]",
+        "lstrip": false,
+        "normalized": false,
+        "rstrip": false,
+        "single_word": false,
+        "special": true
+      },
+      "29757": {
+        "content": "[PAD]",
+        "lstrip": false,
+        "normalized": false,
+        "rstrip": false,
+        "single_word": false,
+        "special": true
+      },
+      "29758": {
+        "content": "[SEP]",
+        "lstrip": false,
+        "normalized": false,
+        "rstrip": false,
+        "single_word": false,
+        "special": true
+      },
+      "29759": {
+        "content": "[UNK]",
+        "lstrip": false,
+        "normalized": false,
+        "rstrip": false,
+        "single_word": false,
+        "special": true
+      },
+      "46585": {
+        "content": "[MASK]",
+        "lstrip": false,
+        "normalized": false,
+        "rstrip": false,
+        "single_word": false,
+        "special": true
+      },
+      "46586": {
+        "content": "[بريد]",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "46587": {
+        "content": "[رابط]",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      },
+      "57701": {
+        "content": "[مستخدم]",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": true,
+        "special": true
+      }
+    },
+    "clean_up_tokenization_spaces": true,
+    "cls_token": "[CLS]",
+    "do_basic_tokenize": true,
+    "do_lower_case": false,
+    "full_tokenizer_file": null,
+    "mask_token": "[MASK]",
+    "max_len": 512,
+    "model_max_length": 512,
+    "never_split": [
+      "+وا",
+      "س+",
+      "[مستخدم]",
+      "+ك",
+      "+هم",
+      "+ة",
+      "+ن",
+      "لل+",
+      "[بريد]",
+      "[رابط]",
+      "+ه",
+      "+كن",
+      "+ا",
+      "+ات",
+      "+ي",
+      "ب+",
+      "+نا",
+      "+هن",
+      "+كم",
+      "ك+",
+      "+ين",
+      "+هما",
+      "و+",
+      "+كما",
+      "+ان",
+      "+ت",
+      "+ون",
+      "ل+",
+      "+ها",
+      "ال+",
+      "ف+"
+    ],
+    "pad_token": "[PAD]",
+    "sep_token": "[SEP]",
+    "strip_accents": null,
+    "tokenize_chinese_chars": true,
+    "tokenizer_class": "BertTokenizer",
+    "unk_token": "[UNK]"
+  }
+  

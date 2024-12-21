@@ -1,0 +1,77 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Sina BDM</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+</head>
+<body>
+<div class="wrapper">
+  <div class="login_box">
+    <div class="login-header">
+      <span>Register</span>
+    </div>
+    
+    <form method="post" action="{% url 'register' %}">
+      {% csrf_token %}
+
+      <div class="input_box_reg">
+        
+
+        {{form.first_name}}
+        <label for="first_name" class="label">First Name</label>
+        <i class="bx bx-user icon"></i>
+      </div>
+      <div class="input_box_reg">
+        {{form.last_name}}
+
+        <label for="last_name" class="label">Last Name</label>
+        <i class="bx bx-user icon"></i>
+      </div>
+      <div class="input_box_reg">
+        {{form.email}}
+
+        <label for="email" class="label">Email</label>
+        <i class="bx bx-envelope icon"></i>
+      </div>
+      <div class="input_box_reg">
+        {{form.password1}}
+
+        <label for="password1" class="label">Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+      </div>
+      <div class="input_box_reg">
+        {{form.password2}}
+        <label for="password2" class="label">Confirm Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+      </div>
+      <div class="input_box">
+        <input type="submit" class="input-submit" value="Register">
+      </div>
+    </form>
+
+    <div class="login">
+      <span>Already have an account? <a href="{% url 'login' %}">Login</a></span>
+    </div>
+    
+    <!-- Display messages -->
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  </div>
+</div>
+</body>
+</html>
+
+
+

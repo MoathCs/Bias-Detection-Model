@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMD Chatbot Interface</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <div class="header-right">
+            <div class="user">Hello, {{ request.user.first_name }}</div>
+            <h1>SINA BDM</h1>
+            <div>
+                <a href="{% url 'logout' %}" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+                </div>
+    </div>
+    
+    <div class="sidebar">
+            <a href="{% url 'ViewSessions' %}"><i class="fas fa-history"></i> History</a>
+        </div>
+ 
+    <div class="chatbot-container">
+        <div class="chatbot">
+            <h2><i class="fas fa-robot"></i> Chat GPT3.5</h2>
+            <br>
+            <p>GPT Chat is a chatbot developed by OpenAI and released in November 2022. It is built on OpenAI's GPT-3 family of large language models and fine-tuned using supervised learning and supported learning techniques.</p>
+            <br>
+            <form action="{% url 'main-page' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="chatbot" value="Chat GPT3.5">
+                <button type="submit">Evaluate</button>
+            </form>
+        </div>
+        
+        <div class="chatbot">
+            <h2><i class="fa-brands fa-google"></i> Gemini</h2>
+            <br>
+            <p>Gemini is a chatbot prototype designed by Google based on the Lamad conversational language model. Developed in direct response to the emergence of OpenAI's GPT chat, and released in a limited capacity in March 2023 for limited responses.</p>
+            <br>
+            <form action="{% url 'main-page' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="chatbot" value="Gemini">
+                <button type="submit">Evaluate</button>
+            </form>
+        </div>
+        
+        <div class="chatbot">
+            <h2><i class="fas fa-robot"></i> Chat GPT 4.0</h2>
+            <br>
+            <p>GPT-4 is OpenAI's latest language model, surpassing GPT-3.5 technology. Optimized for complex pattern recognition, it provides users with sophisticated output, representing a significant advancement in the Generative Pre-Trained Transformers series.</p>
+            <br>
+            <form action="{% url 'main-page' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="chatbot" value="Chat GPT 4.0">
+                <button type="submit">Evaluate</button>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

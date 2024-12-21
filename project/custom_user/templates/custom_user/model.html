@@ -1,0 +1,161 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% comment %} <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% endcomment %}
+  <title>Model Evaluation Interface</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <div class="header">
+    <div class="header-right1">
+        <h1>SINA BDM</h1>
+        <div>
+            <a href="{% url 'logout' %}" class="logout"><i class="fas fa-sign-out-alt"></i> </a>
+            <a href="{% url 'main-page' %}" class="logout"><i class="fas fa-home"></i> </a>
+        </div>
+            </div>
+</div>
+  <div class="container">
+    <div class="linguistic-model">
+      <h2>Using the linguistic model:{{ request.session.chatbot_model }}</h2>
+      <select>
+        <option value="SinaMBD_v2">SinaMBD_v2</option>
+        <option value="SinaMBD_v2">SinaMBD_v2</option>
+        <option value="SinaMBD_v2">SinaMBD_v2</option>
+      </select>
+      
+      <label id="articles" for="rights">Human Rights Articles:</label>
+      <div class="all">
+        <input type="checkbox" id="all" name="all"> 
+      <label id="all_check"for="all">Check All</label>
+      </div> 
+      <form id="evaluate-form"  action="{% url 'ClickEvaluate' %}" method="POST">
+        {% csrf_token %}
+      <div class="rights">
+
+        <input type="checkbox" id="الحريّة والمساواة" name="rights" value="right1">
+        <label for="الحريّة والمساواة">Right 1: Free and equal (الحريّة والمساواة)</label>
+
+        <input type="checkbox" id="التحرّر من التمييز" name="rights" value="right2">
+        <label for="التحرّر من التمييز">Right 2: Freedom from discrimination (التحرّر من التمييز)</label>
+
+        <input type="checkbox" id="الحقّ في الحياة" name="rights" value="right3">
+        <label for="الحقّ في الحياة">Right 3: Right to life (الحقّ في الحياة)</label>
+
+        <input type="checkbox" id="التحرّر من الاستعباد" name="rights" value="right4">
+        <label for="التحرّر من الاستعباد">Right 4: Freedom from slavery (التحرّر من الاستعباد)</label>
+
+        <input type="checkbox" id="التحرّر من التعذيب" name="rights" value="right5">
+        <label for="التحرّر من التعذيب">Right 5: Freedom from torture (التحرّر من التعذيب)</label>
+
+        <input type="checkbox" id="الحقّ في الاعتراف بالشخصيّة القانونيّة" name="rights" value="right6">
+        <label for="الحقّ في الاعتراف بالشخصيّة القانونيّة">Right 6: Right to recognition before the law (الحقّ في الاعتراف بالشخصيّة القانونيّة)</label>
+
+        <input type="checkbox" id="الحقّ في المساواة أمام القانون" name="rights" value="right7">
+        <label for="الحقّ في المساواة أمام القانون">Right 7: Right to equality before the law (الحقّ في المساواة أمام القانون)</label>
+
+        <input type="checkbox" id="الوصول إلى العدالة" name="rights" value="right8">
+        <label for="الوصول إلى العدالة">Right 8: Access to justice (الوصول إلى العدالة)</label>
+
+        <input type="checkbox" id="التحرّر من الاحتجاز التعسفي" name="rights" value="right9">
+        <label for="التحرّر من الاحتجاز التعسفي">Right 9: Freedom from arbitrary detention (التحرّر من الاحتجاز التعسفي)</label>
+
+        <input type="checkbox" id="الحقّ في المحاكة العدالة" name="rights" value="right10">
+        <label for="الحقّ في المحاكة العدالة">Right 10: Right to a fair trial (الحقّ في المحاكة العدالة)</label>
+
+        <input type="checkbox" id="قرينة البراءة" name="rights" value="right11">
+        <label for="قرينة البراءة">Right 11: Presumption of innocence (قرينة البراءة)</label>
+
+        <input type="checkbox" id="الحقّ في الخصوصية" name="rights" value="right12">
+        <label for="الحقّ في الخصوصية">Right 12: Right to privacy (الحقّ في الخصوصية)</label>
+
+        <input type="checkbox" id="الحريّة التنقل" name="rights" value="right13">
+        <label for="الحريّة التنقل">Right 13: Freedom of movement (الحريّة التنقل)</label>
+
+        <input type="checkbox" id="الحقّ في اللجوء" name="rights" value="right14">
+        <label for="الحقّ في اللجوء">Right 14: Right to asylum (الحقّ في اللجوء)</label>
+
+        <input type="checkbox" id="الحقّ في الجنسية" name="rights" value="right15">
+        <label for="الحقّ في الجنسية">Right 15: Right to nationality (الحقّ في الجنسية)</label>
+
+        <input type="checkbox" id="الحقّ في الزواج و تأسيس أسرة" name="rights" value="right16">
+        <label for="الحقّ في الزواج و تأسيس أسرة">Right 16: Right to marriage and to found a family (الحقّ في الزواج و تأسيس أسرة)</label>
+
+        <input type="checkbox" id="الحقّ في التملك" name="rights" value="right17">
+        <label for="الحقّ في التملك">Right 17: Right to own property (الحقّ في التملك)</label>
+
+        <input type="checkbox" id="حريه الدين والمعتقد" name="rights" value="right18">
+        <label for="حريه الدين والمعتقد">Right 18: Freedom of religion or belief (حريه الدين والمعتقد)</label>
+
+        <input type="checkbox" id="حريه التعبير" name="rights" value=right"right19">
+        <label for="حريه التعبير">Right 19: Freedom of Expression (حريه التعبير)</label>
+
+        <input type="checkbox" id="حريه التجمع" name="rights" value="right20">
+        <label for="حريه التجمع">Right 20: Freedom of assembly (حريه التجمع)</label>
+
+        <input type="checkbox" id="حريه المشاركة في الشؤون العامة" name="rights" value="right21">
+        <label for="حريه المشاركة في الشؤون العامة">Right 21: Right to partake in public affairs (حريه المشاركة في الشؤون العامة)</label>
+
+        <input type="checkbox" id="الحقّ في الضمان الاجنماعي" name="rights" value="right22">
+        <label for="الحقّ في الضمان الاجنماعي">Right 22: Right to social security (الحقّ في الضمان الاجنماعي)</label>
+
+        <input type="checkbox" id="الحقّ في العمل" name="rights" value="right23">
+        <label for="الحقّ في العمل">Right 23: Right to work (الحقّ في العمل)</label>
+
+        <input type="checkbox" id="الحقّ في الراحة واوقات الفراغ" name="rights" value="right24">
+        <label for="الحقّ في الراحة واوقات الفراغ">Right 24: Right to leisure and rest (الحقّ في الراحة واوقات الفراغ)</label>
+
+        <input type="checkbox" id="الحقّ في مستوى معيشي ملائم" name="rights" value="right25">
+        <label for="الحقّ في مستوى معيشي ملائم">Right 25: Right to adequate standard of living (الحقّ في مستوى معيشي ملائم)</label>
+
+        <input type="checkbox" id="الحقّ في التعلبم" name="rights" value="right26">
+        <label for="الحقّ في التعلبم">Right 26: Right to education (الحقّ في التعلبم)</label>
+
+        <input type="checkbox" id="الحقّ في المشاركة في الحياة الثقافية والفنية والعلمية" name="rights" value="right27">
+        <label for="الحقّ في المشاركة في الحياة الثقافية والفنية والعلمية">Right 27: Right to take part in cultural, artistic and scientific life (الحقّ في المشاركة في الحياة الثقافية والفنية والعلمية)</label>
+
+        <input type="checkbox" id="الحقّ في عالم حر وعادل" name="rights" value="right28">
+        <label for="الحقّ في عالم حر وعادل">Right 28: Right to a free and fair world (الحقّ في عالم حر وعادل)</label>
+
+        <input type="checkbox" id="الواجبات اتجاه مجتمعك" name="rights" value="right29">
+        <label for="الواجبات اتجاه مجتمعك">Right 29: Duty to your community (الواجبات اتجاه مجتمعك)</label>
+
+        <input type="checkbox" id="الحقوق غير قابله للتصرف" name="rights" value="right30">
+        <label for="الحقوق غير قابله للتصرف">Right 30: Rights are inalienable (الحقوق غير قابله للتصرف)</label>     
+
+
+      </div>
+      <button type="submit" id="evaluate-btn">Evaluate</button>
+    </form>
+
+    {% if is_result_visabel %}
+      <div class="prediction">{{ most_common_prediction }}</div>
+    {% endif %}
+
+
+    {%if is_msg %}
+    <div class="error-msg">
+      {% if msg %}
+        {{ msg }}
+        </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    
+
+
+    </div>
+  </div>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
